@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet">
+<body style="background-color: #ccc;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-4">
+                <div class="card">
+                    <div class="card-body">
+                            <input type="text" id="nombre" class="w-100" placeholder="Nombre">
+                            <input type="text" id="profesion" class="w-100 mt-2" placeholder="Profesión">
+                            <input type="text" id="url" class="w-100 mt-2" placeholder="URL">     
+                    </div> 
+                </div>
+
+                <div class="card mt-3 rounded-4">
+                    <div id="img">
+                        <img  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" class="w-100 rounded-3" >
+                    </div>
+                    <div class="card-body">
+                        <p id="tuNombre">Tu nombre</p>
+                        <p id="tuProfesion">Tu profesión</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        
+        
+        const nombre = document.getElementById('nombre');
+        const profesion = document.getElementById('profesion');
+        const url = document.getElementById('url');
+        const tuNombre = document.getElementById('tuNombre');
+        const tuProfesion = document.getElementById('tuProfesion');
+        const img = document.getElementById('img');
+
+        
+        nombre.addEventListener('keyup',function(){
+
+            if (nombre.value == "") {
+                tuNombre.innerText = "Tu nombre";
+            } else {
+
+                tuNombre.innerText = nombre.value;            
+            }
+
+        })
+        
+
+        profesion.addEventListener('keyup',function(){
+
+            if (profesion.value == "") {
+                tuProfesion.innerText = "Tu profesión";
+            } else {
+
+                tuProfesion.innerText = profesion.value;            
+                
+            }
+
+        })
+
+
+        url.addEventListener('keyup',function(){
+
+            if (url.value == "") {
+                img.innerHTML = `<img  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" class="w-100 rounded-3" >`;
+            } else {
+                img.innerHTML = `<img  src="${url.value}" class="w-100 rounded-3" >`;}
+        })
+   
+    
+    
+    </script>
+</body>
+</html>
+
+<!--- https://i.pinimg.com/736x/be/a5/75/bea575249c5d9c76290f569032eaf0dc.jpg -->
